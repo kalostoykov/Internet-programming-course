@@ -1,12 +1,6 @@
 $(document).ready(function(){
 	"use strict"
 	
-	console.log($("body"));
-	console.log($("#list1"));
-	console.log($(".pretty"));
-	console.log($("li.pretty"));
-	console.log($("ul .pretty"));
-	
 	var list = $("#list1");
 	console.log(list.children());
 	
