@@ -17,4 +17,9 @@ $(document).ready(function(){
 	
 	// by parent (using SPACE) - children of ul that have class pretty:
 	console.log($("div .latest > li > a"));
+	
+	//insert an element before an other
+	$("div#header").before($("div#footer"));
+	$("#menu-item-2912").before($("#menu-item-2914"));
+	$("#col1").before($("#col3"));
 });
