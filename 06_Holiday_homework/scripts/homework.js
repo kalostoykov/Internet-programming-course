@@ -37,4 +37,19 @@ $(document).ready(function() {
 	link.click(function() {
         alert("hello world");
     });
+
+    //task_10
+    var switched = false;
+    var col1 = $("#col1");
+    var col2 = $("#col2");
+
+   	link.click(function() {
+   		if(switched == false) {
+   			col1.before(col2);
+   			switched = true;
+   		} else {
+   			col2.before(col1);
+   			switched = false;
+   		}
+   	});
 })
