@@ -20,4 +20,8 @@ $(document).ready(function() {
 	var footer = $("#footer");
 	var div = $("<div/>").attr("id", "dynamiccontent");
 	footer.prepend(div);
+
+	//task_6
+	var input = $("<input/>").attr("id", "textinput");
+	div.append(input);
 })
