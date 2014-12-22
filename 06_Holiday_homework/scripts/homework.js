@@ -24,4 +24,9 @@ $(document).ready(function() {
 	//task_6
 	var input = $("<input/>").attr("id", "textinput");
 	div.append(input);
+
+	//task_7
+	var button = $("<button/>").attr("id", "addbutton").text("ADD");
+	div.append(button);
+	
 })
