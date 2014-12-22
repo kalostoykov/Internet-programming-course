@@ -32,4 +32,9 @@ $(document).ready(function() {
 	//task_8
 	var posts = $("<ul/>").attr("id", "posts");
 	div.append(posts);
+
+	//task_9
+	link.click(function() {
+        alert("hello world");
+    });
 })
