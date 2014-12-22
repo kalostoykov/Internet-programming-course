@@ -28,5 +28,8 @@ $(document).ready(function() {
 	//task_7
 	var button = $("<button/>").attr("id", "addbutton").text("ADD");
 	div.append(button);
-	
+
+	//task_8
+	var posts = $("<ul/>").attr("id", "posts");
+	div.append(posts);
 })
