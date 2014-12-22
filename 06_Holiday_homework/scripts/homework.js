@@ -15,4 +15,9 @@ $(document).ready(function() {
 	var item = $("<li/>");
 	item.append(link);
 	list.append(item);
+
+	//task_5
+	var footer = $("#footer");
+	var div = $("<div/>").attr("id", "dynamiccontent");
+	footer.prepend(div);
 })
