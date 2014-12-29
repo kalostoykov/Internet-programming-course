@@ -74,7 +74,7 @@ $(document).ready(function() {
 	  method: "GET"
 	}).then(processResponse);
 
-	//task_12, task_13
+	//task_12, task_13, task_14
 	button.click(function() {
 		if(input.val() === "") {
 			alert("Enter some text!");
@@ -87,7 +87,13 @@ $(document).ready(function() {
     				userId: 1
   				}
 			}).then(function(data) {
-  				console.log(data);
+  				$.ajax('http://jsonplaceholder.typicode.com/posts/' + data.id, {
+  					method: 'GET'
+				}).then(function(data) {
+  					var newElement = $("<li/>");
+  					newElement.text(data.title);
+  					posts.append(newElement);
+				});
 			});
 		}
 	});
