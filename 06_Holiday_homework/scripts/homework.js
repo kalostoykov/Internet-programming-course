@@ -52,4 +52,25 @@ $(document).ready(function() {
    			switched = false;
    		}
    	});
+
+   	//task_11
+   	function appendToList(list, post) {
+		var newElement = $("<li/>");
+		newElement.text(post.title);
+		list.append(newElement);
+	}
+	
+	function processResponse(response) {
+		var i = 0;
+		$.each(response, function() {
+			appendToList(posts, this);
+			if (++i >= 5) {
+				return false;
+			}
+		});
+	}
+	
+	$.ajax("http://jsonplaceholder.typicode.com/posts", {
+	  method: "GET"
+	}).then(processResponse);
 })
