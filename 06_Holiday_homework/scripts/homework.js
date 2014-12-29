@@ -73,4 +73,12 @@ $(document).ready(function() {
 	$.ajax("http://jsonplaceholder.typicode.com/posts", {
 	  method: "GET"
 	}).then(processResponse);
+
+	//task_12
+	button.click(function() {
+		if(input.val() === "") {
+			alert("Enter some text!");
+		}
+	});
+	
 })
