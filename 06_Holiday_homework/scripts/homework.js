@@ -74,11 +74,22 @@ $(document).ready(function() {
 	  method: "GET"
 	}).then(processResponse);
 
-	//task_12
+	//task_12, task_13
 	button.click(function() {
 		if(input.val() === "") {
 			alert("Enter some text!");
+		} else {
+			$.ajax('http://jsonplaceholder.typicode.com/posts', {
+  				method: 'POST',
+  				data: {
+    				title: input.val(),
+    				body: 'bar',
+    				userId: 1
+  				}
+			}).then(function(data) {
+  				console.log(data);
+			});
 		}
 	});
-	
+
 })
