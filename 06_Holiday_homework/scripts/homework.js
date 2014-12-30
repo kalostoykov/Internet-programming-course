@@ -115,4 +115,8 @@ $(document).ready(function() {
 		}
 	});
 
+	//task_17
+	var task17Input = $('<input/>');
+	task17Input.insertBefore(posts);
+
 })
