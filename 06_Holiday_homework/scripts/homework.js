@@ -74,7 +74,7 @@ $(document).ready(function() {
 	  method: "GET"
 	}).then(processResponse);
 
-	//task_12, task_13, task_14
+	//task_12, task_13, task_14, task_15, task_16
 	button.click(function() {
 		if(input.val() === "") {
 			alert("Enter some text!");
@@ -98,7 +98,17 @@ $(document).ready(function() {
   					deleteButton.text("X");
   					newElement.append(deleteButton);
   					deleteButton.click(function(){
-  						alert("deleting");
+  						var confirmDialog = confirm("Are you sure you want to delete this post?");
+  						if(confirmDialog == true) {
+  							$.ajax('http://jsonplaceholder.typicode.com/posts/' + data.id, {
+  								method: 'DELETE'
+							}).then(function() {
+								deleteButton.parent().remove();
+								console.log("deleted");	
+							});
+  						} else {
+  							return;
+  						}
   					});
 				});
 			});
