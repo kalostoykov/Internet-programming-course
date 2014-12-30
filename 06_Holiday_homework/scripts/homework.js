@@ -93,6 +93,13 @@ $(document).ready(function() {
   					var newElement = $("<li/>");
   					newElement.text(data.title);
   					posts.append(newElement);
+  					
+  					var deleteButton = $("<button/>");
+  					deleteButton.text("X");
+  					newElement.append(deleteButton);
+  					deleteButton.click(function(){
+  						alert("deleting");
+  					});
 				});
 			});
 		}
