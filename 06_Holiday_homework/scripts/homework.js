@@ -101,10 +101,13 @@ $(document).ready(function() {
   						var confirmDialog = confirm("Are you sure you want to delete this post?");
   						if(confirmDialog == true) {
   							$.ajax('http://jsonplaceholder.typicode.com/posts/' + data.id, {
-  								method: 'DELETE'
+								method: 'DELETE'
 							}).then(function() {
-								deleteButton.parent().remove();
-								console.log("deleted");	
+								$.ajax('http://jsonplaceholder.typicode.com/posts/' + data.id, {
+									method: 'GET'
+								}).then(function() {}, function() {
+									deleteButton.parent().remove();
+								});
 							});
   						} else {
   							return;
@@ -119,4 +122,14 @@ $(document).ready(function() {
 	var task17Input = $('<input/>');
 	task17Input.insertBefore(posts);
 
+	//task_18
+	task17Input.change(function() {
+		$.ajax('http://jsonplaceholder.typicode.com/posts?userId=' + task17Input.val(), {
+  			method: 'GET'
+		}).then(function(data) {
+			$.each(data, function() {
+				appendToList(posts, this);
+			});
+		});
+	});
 })
