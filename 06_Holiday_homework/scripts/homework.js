@@ -93,44 +93,50 @@ $(document).ready(function() {
   					var newElement = $("<li/>");
   					newElement.text(data.title);
   					posts.append(newElement);
-  					
-  					var deleteButton = $("<button/>");
-  					deleteButton.text("X");
-  					newElement.append(deleteButton);
-  					//task_16 fix
-  					deleteButton.click(function(){
-  						var confirmDialog = confirm("Are you sure you want to delete this post?");
-  						if(confirmDialog == true) {
-  							$.ajax('http://jsonplaceholder.typicode.com/posts/' + data.id, {
-								method: 'DELETE'
-							}).then(function() {
-								$.ajax('http://jsonplaceholder.typicode.com/posts/' + data.id, {
-									method: 'GET'
-								}).then(function() {}, function() {
-									deleteButton.parent().remove();
-								});
-							});
-  						} else {
-  							return;
-  						}
-  					});
+  					deleteButtonFunc(data, newElement);
 				});
 			});
 		}
 	});
 
+	function deleteButtonFunc(data, newElement) {
+		var deleteButton = $("<button/>");
+  			deleteButton.text("X");
+  			newElement.append(deleteButton);
+  			//task_16 fix
+  			deleteButton.click(function(){
+  			var confirmDialog = confirm("Are you sure you want to delete this post?");
+			if(confirmDialog == true) {
+				$.ajax('http://jsonplaceholder.typicode.com/posts/' + data.id, {
+				method: 'DELETE'
+			}).then(function() {
+				$.ajax('http://jsonplaceholder.typicode.com/posts/' + data.id, {
+					method: 'GET'
+				}).then(function() {}, function() {
+					deleteButton.parent().remove();
+				});
+			});
+			} else {
+				return;
+			}
+		});
+	}
+
 	//task_17
 	var task17Input = $('<input/>');
 	task17Input.insertBefore(posts);
 
-	//task_18, task_19
+	//task_18, task_19, task_20
 	task17Input.change(function() {
 		$.ajax('http://jsonplaceholder.typicode.com/posts?userId=' + task17Input.val(), {
   			method: 'GET'
 		}).then(function(data) {
 			posts.empty();
 			$.each(data, function() {
-				appendToList(posts, this);
+				var newElement = $("<li/>");
+				newElement.text(this.title);
+				posts.append(newElement);
+				deleteButtonFunc(data, newElement);
 			});
 		});
 	});
