@@ -23,7 +23,7 @@ public class PostsService {
 		return null;
 	}
 	
-	public Post createPost(Post post) {
+	public synchronized Post createPost(Post post) {
 		lastPostId++;
 		post.setId(lastPostId);
 		posts.add(post);
