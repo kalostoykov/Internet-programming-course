@@ -5,6 +5,7 @@ import java.util.List;
 import org.elsysbg.ip.jsonplaceholder.model.Post;
 import org.elsysbg.ip.jsonplaceholder.model.User;
 
+import com.elsysbg.ip.jsonplaceholder.Services;
 import com.elsysbg.ip.jsonplaceholder.service.PostsService;
 
 public class PostsRest {
@@ -13,7 +14,7 @@ public class PostsRest {
 	private final User defaultAuthor;
 	
 	public PostsRest() {
-		postsService = new PostsService();
+		postsService = Services.getPostsService();
 		
 		defaultAuthor = new User();
 		defaultAuthor.setEmail("hello@world");
