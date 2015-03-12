@@ -1,6 +1,6 @@
-package com.elsysbg.ip.jsonplaceholder;
+package org.elsysbg.ip.jsonplaceholder;
 
-import com.elsysbg.ip.jsonplaceholder.service.PostsService;
+import org.elsysbg.ip.jsonplaceholder.service.PostsService;
 
 public class Services {
 	private static PostsService postsService;

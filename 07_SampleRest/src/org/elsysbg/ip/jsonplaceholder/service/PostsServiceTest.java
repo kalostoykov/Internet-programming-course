@@ -1,4 +1,4 @@
-package com.elsysbg.ip.jsonplaceholder.service;
+package org.elsysbg.ip.jsonplaceholder.service;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;

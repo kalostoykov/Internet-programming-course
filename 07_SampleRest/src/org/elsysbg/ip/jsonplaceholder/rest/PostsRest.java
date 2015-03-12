@@ -2,11 +2,10 @@ package org.elsysbg.ip.jsonplaceholder.rest;
 
 import java.util.List;
 
+import org.elsysbg.ip.jsonplaceholder.Services;
 import org.elsysbg.ip.jsonplaceholder.model.Post;
 import org.elsysbg.ip.jsonplaceholder.model.User;
-
-import com.elsysbg.ip.jsonplaceholder.Services;
-import com.elsysbg.ip.jsonplaceholder.service.PostsService;
+import org.elsysbg.ip.jsonplaceholder.service.PostsService;
 
 public class PostsRest {
 

@@ -10,7 +10,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class PostsRestTest {
-
 	private PostsRest postsRest;
 
 	@Before
@@ -28,5 +27,4 @@ public class PostsRestTest {
 		assertEquals("hello@world", result.getUser().getEmail());
 		assertEquals("secret", result.getUser().getPassword());		
 	}
-
 }
