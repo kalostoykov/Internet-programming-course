@@ -3,22 +3,37 @@ package org.elsysbg.ip.jsonplaceholder.rest;
 import java.util.List;
 
 import org.elsysbg.ip.jsonplaceholder.model.Post;
+import org.elsysbg.ip.jsonplaceholder.model.User;
+
+import com.elsysbg.ip.jsonplaceholder.service.PostsService;
 
 public class PostsRest {
 
+	private final PostsService postsService;
+	private final User defaultAuthor;
+	
+	public PostsRest() {
+		postsService = new PostsService();
+		
+		defaultAuthor = new User();
+		defaultAuthor.setEmail("hello@world");
+		defaultAuthor.setPassword("secret");
+	}
+	
 	public List<Post> getPosts() {
-		return null;
+		return postsService.getPosts();
 	}
 	public Post getPost(long postId) {
-		return null;
+		return postsService.getPost(postId);
 	}
 	public Post createPost(Post post) {
-		return null;
+		post.setUser(defaultAuthor);
+		return postsService.createPost(post);
 	}
 	public Post updatePost(Post post) {
-		return null;
+		return postsService.updatePost(post);
 	}
 	public void deletePost(long postId) {
-		
+		postsService.deletePost(postId);
 	}
 }
