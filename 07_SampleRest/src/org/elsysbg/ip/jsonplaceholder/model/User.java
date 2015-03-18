@@ -1,6 +1,9 @@
 package org.elsysbg.ip.jsonplaceholder.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 // Model is copied by http://jsonplaceholder.typicode.com/
+@XmlRootElement
 public class User {
 	
 	private long id;
