@@ -30,7 +30,7 @@ public class PostsService {
 		return post;
 	}
 	
-	public Post updatePost(Post post) {
+	public Post updatePost(long postId,Post post) {
 		deletePost(post.getId());
 		posts.add(post);
 		return post;
