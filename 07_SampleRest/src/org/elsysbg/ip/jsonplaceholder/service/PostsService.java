@@ -31,9 +31,10 @@ public class PostsService {
 	}
 	
 	public Post updatePost(long postId,Post post) {
-		deletePost(post.getId());
-		posts.add(post);
-		return post;
+		final Post fromDb = getPost(postId);
+		fromDb.setBody(post.getBody());
+		fromDb.setTitle(post.getTitle());
+		return fromDb;
 	}
 	
 	// change the return type to void
