@@ -50,7 +50,7 @@ public class PostsRest {
 	@Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	public Post createPost(Post post) {
-		post.setUser(defaultAuthor);
+		post.setAuthor(defaultAuthor);
 		return postsService.createPost(post);
 	}
 	

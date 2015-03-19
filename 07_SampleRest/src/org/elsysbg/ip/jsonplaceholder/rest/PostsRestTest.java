@@ -49,8 +49,8 @@ public class PostsRestTest {
 		 
 		Mockito.verifyNoMoreInteractions(postsService);
 
-		assertNotNull(result.getUser());
-		assertEquals("hello@world", result.getUser().getEmail());
-		assertEquals("secret", result.getUser().getPassword());
+		assertNotNull(result.getAuthor());
+		assertEquals("hello@world", result.getAuthor().getEmail());
+		assertEquals("secret", result.getAuthor().getPassword());
 	}
 }
